@@ -3,4 +3,5 @@ langchain
 PyPDF2
 pdfplumber
 streamlit
+streamlit-chat
 gunicorn
