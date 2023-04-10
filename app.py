@@ -4,7 +4,7 @@ import os
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationEntityMemory
 from langchain.chains.conversation.prompt import ENTITY_MEMORY_CONVERSATION_TEMPLATE
-from langchain.llms import OpenAI
+from langchain import OpenAI
 from streamlit_chat import message
 from summarizer import summarize_youtube_video, summarize_wiki_article, summarize_pdf
 
@@ -28,33 +28,42 @@ tab_choice = st.sidebar.radio("Choose a Tab", tab_names)
 uploaded_files = {}
 
 if api_key:
-
     if tab_choice == "YouTube":
+        st.subheader("YouTube📺")
         youtube_url = st.text_input("Enter a YouTube video link:")
         youtube_prompt = st.text_area(
             "What would you like to know about this video: ")
         if st.button("Submit"):
             if youtube_url and youtube_prompt:
                 display_youtube_video(youtube_url)
-            response = summarize_youtube_video(youtube_url, youtube_prompt)
+            with st.spinner("generating..."):
+                response = summarize_youtube_video(
+                    youtube_url, youtube_prompt, api_key)
             st.success(f"\n\n{response}")
     elif tab_choice == "Wikipedia":
+        st.subheader("Wikipedia📃")
         wiki_url = st.text_input("Enter a Wiki link or tag:").split('/')[-1]
         wiki_prompt = st.text_area(
             f"What would you like to know about this article: ")
         if st.button("Submit"):
             if wiki_url and wiki_prompt:
-                response = summarize_wiki_article(wiki_url, wiki_prompt)
+                with st.spinner("generating..."):
+                    response = summarize_wiki_article(
+                        wiki_url, wiki_prompt, api_key)
                 st.success(f"\n\n{response}")
     elif tab_choice == "PDF":
+        st.subheader("PDF📑")
         uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
         pdf_prompt = st.text_area(
             f"What would you like to know about this document: ")
         if st.button("Submit"):
             if uploaded_file is not None and pdf_prompt:
-                response = summarize_pdf(uploaded_file, pdf_prompt)
+                with st.spinner("generating..."):
+                    response = summarize_pdf(
+                        uploaded_file, pdf_prompt, api_key)
                 st.success(f"\n\n{response}")
     elif tab_choice == "Chat":
+        st.subheader("Chat💬")
         # Storing Sessions
         if 'generated' not in st.session_state:
             st.session_state['generated'] = []  # output
