@@ -6,13 +6,9 @@ from langchain.chains.conversation.memory import ConversationEntityMemory
 from langchain.chains.conversation.prompt import ENTITY_MEMORY_CONVERSATION_TEMPLATE
 from langchain import OpenAI
 from streamlit_chat import message
-from summarizer import summarize_youtube_video, summarize_wiki_article, summarize_pdf
-
-
-def display_youtube_video(url):
-    video_id = url.split("watch?v=")[-1]
-    st.markdown(
-        f'<iframe width="560" height="315" src="https://www.youtube.com/embed/{video_id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', unsafe_allow_html=True)
+from summarizer import summarize_pdf
+from youtube_page import render_youtube_page
+from wikipedia_page import render_wikipedia_page
 
 
 st.set_page_config(page_title="PDF Reader and YouTube Player",
@@ -29,28 +25,9 @@ uploaded_files = {}
 
 if api_key:
     if tab_choice == "YouTube":
-        st.subheader("YouTube📺")
-        youtube_url = st.text_input("Enter a YouTube video link:")
-        youtube_prompt = st.text_area(
-            "What would you like to know about this video: ")
-        if st.button("Submit"):
-            if youtube_url and youtube_prompt:
-                display_youtube_video(youtube_url)
-            with st.spinner("generating..."):
-                response = summarize_youtube_video(
-                    youtube_url, youtube_prompt, api_key)
-            st.success(f"\n\n{response}")
+        render_youtube_page(api_key)
     elif tab_choice == "Wikipedia":
-        st.subheader("Wikipedia📃")
-        wiki_url = st.text_input("Enter a Wiki link or tag:").split('/')[-1]
-        wiki_prompt = st.text_area(
-            f"What would you like to know about this article: ")
-        if st.button("Submit"):
-            if wiki_url and wiki_prompt:
-                with st.spinner("generating..."):
-                    response = summarize_wiki_article(
-                        wiki_url, wiki_prompt, api_key)
-                st.success(f"\n\n{response}")
+        render_wikipedia_page(api_key)
     elif tab_choice == "PDF":
         st.subheader("PDF📑")
         uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
