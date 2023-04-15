@@ -15,6 +15,7 @@ def render_youtube_page(api_key):
     response = ""
     st.subheader("YouTube📺")
     youtube_url = st.text_input("Enter a YouTube video link:")
+    if '//m.' in youtube_url: youtube_url.replace('//m.', '//')
     youtube_prompt = st.text_area(
         "What would you like to know about this video: ")
     if st.button("Submit"):
