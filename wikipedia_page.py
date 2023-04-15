@@ -1,5 +1,6 @@
 import streamlit as st
 from summarizer import summarize_wiki_article
+from speech_eng import text2voice
 
 
 def render_wikipedia_page(api_key):
@@ -12,4 +13,5 @@ def render_wikipedia_page(api_key):
             with st.spinner("generating..."):
                 response = summarize_wiki_article(
                     wiki_url, wiki_prompt, api_key)
-            st.success(f"\n\n{response}")
+                st.audio(text2voice(str(response)), format="audio/wav")
+                st.success(f"\n\n{response}")

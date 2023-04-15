@@ -9,6 +9,7 @@ from streamlit_chat import message
 from summarizer import summarize_pdf
 from youtube_page import render_youtube_page
 from wikipedia_page import render_wikipedia_page
+from pdf_page import render_pdf_page
 
 
 st.set_page_config(page_title="PDF Reader and YouTube Player",
@@ -29,16 +30,7 @@ if api_key:
     elif tab_choice == "Wikipedia":
         render_wikipedia_page(api_key)
     elif tab_choice == "PDF":
-        st.subheader("PDF📑")
-        uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
-        pdf_prompt = st.text_area(
-            f"What would you like to know about this document: ")
-        if st.button("Submit"):
-            if uploaded_file is not None and pdf_prompt:
-                with st.spinner("generating..."):
-                    response = summarize_pdf(
-                        uploaded_file, pdf_prompt, api_key)
-                st.success(f"\n\n{response}")
+        render_pdf_page(api_key)
     elif tab_choice == "Chat":
         st.subheader("Chat💬")
         # Storing Sessions
