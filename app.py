@@ -18,11 +18,14 @@ tab_names = ["YouTube", "Wikipedia", "PDF", "Chat"]
 tab_choice = st.sidebar.radio("Choose a Tab", tab_names)
 
 if api_key:
-    if tab_choice == "YouTube": render_youtube_page(api_key)
-    elif tab_choice == "Wikipedia": render_wikipedia_page(api_key)
-    elif tab_choice == "PDF": render_pdf_page(api_key)
-    elif tab_choice == "Chat": render_chat_page(api_key)
-    else: st.write("Bad File")
+    try:
+        if tab_choice == "YouTube": render_youtube_page(api_key)
+        elif tab_choice == "Wikipedia": render_wikipedia_page(api_key)
+        elif tab_choice == "PDF": render_pdf_page(api_key)
+        elif tab_choice == "Chat": render_chat_page(api_key)
+        else: st.write("Bad File")
+    except Exception as e:
+        st.error(f"An error occurred. Please ensure valid SecreteKey and correct input fotmat.\n Here's the error: {e}")
 else: 
     st.error("No Secret Key Found!! Contact the author to request one!")
     render_profile_page()
