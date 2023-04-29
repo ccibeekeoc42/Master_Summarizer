@@ -2,7 +2,6 @@ import pdfplumber
 from llama_index import LLMPredictor, PromptHelper, ServiceContext, download_loader, GPTSimpleVectorIndex, Document
 from io import BytesIO
 from langchain import OpenAI
-import os
 
 
 def configure_LLM(api_key):

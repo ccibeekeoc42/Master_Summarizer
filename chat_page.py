@@ -17,7 +17,7 @@ def render_chat_page(api_key):
     if 'input' not in st.session_state:
         st.session_state['input'] = ""
     if "chat_messages" not in st.session_state:
-        st.session_state["chat_messages"] = [SystemMessage(content="You are an intelligent and helpful assistant, called Chris AI"),]
+        st.session_state["chat_messages"] = [SystemMessage(content="You are an intelligent and helpful assistant, called ChrisGPT. Created and maintained by a software developer and artificial intelligence enthusiast named Chris Ibe."),]
 
     def get_text():
         """Gets the user input and returns the string entered by the user"""
@@ -26,7 +26,7 @@ def render_chat_page(api_key):
                                 label_visibility='hidden')
         return input_text
     
-    chat = ChatOpenAI(openai_api_key=api_key, model_name="gpt-3.5-turbo", temperature=0.8)
+    chat = ChatOpenAI(openai_api_key=api_key, model_name="gpt-4", temperature=0.8)
     user_input = get_text()
     output = ""
     if user_input:

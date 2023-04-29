@@ -1,9 +1,10 @@
-import streamlit as st
 import os
+import streamlit as st
 from youtube_page import render_youtube_page
 from wikipedia_page import render_wikipedia_page
 from pdf_page import render_pdf_page
 from chat_page import render_chat_page
+from profile_page import render_profile_page
 
 
 st.set_page_config(page_title="PDF Reader and YouTube Player",
@@ -22,4 +23,6 @@ if api_key:
     elif tab_choice == "PDF": render_pdf_page(api_key)
     elif tab_choice == "Chat": render_chat_page(api_key)
     else: st.write("Bad File")
-else: st.error("No Secret Key Found!!")
+else: 
+    st.error("No Secret Key Found!! Contact the author to request one!")
+    render_profile_page()
