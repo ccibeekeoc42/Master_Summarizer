@@ -46,7 +46,7 @@ def render_profile_page():
     st.markdown("<p class='center'>Technical Program Manager at Intel Inc. (2021 - Present).</p>", unsafe_allow_html=True)
     st.markdown("<p class='center'>Senior Software Engineer at Intel Inc. (2021).</p>", unsafe_allow_html=True)
     st.markdown("<p class='center'>Senior Software Dev. & Test Engineer at Cummins Inc. (2017 - 2021).</p>", unsafe_allow_html=True)
-    st.markdown("<p class='center'>Dynamic System & Controls Engineering Intern at Cummins Inc. (2017 - 2021).</p>", unsafe_allow_html=True)
+    st.markdown("<p class='center'>Dynamic System & Controls Engineering Intern at Cummins Inc. (2016).</p>", unsafe_allow_html=True)
     st.markdown("<p class='center'>Research Assistant at TN Tech. (2015 - 2017).</p>", unsafe_allow_html=True)
     st.markdown("---", unsafe_allow_html=True)
     # Display the Publication
@@ -54,9 +54,9 @@ def render_profile_page():
     ieee_conferencel_url = "https://ieeexplore.ieee.org/document/7744904"
     elsevier_journal_url = "https://www.sciencedirect.com/science/article/abs/pii/S037877961730041X"
     st.markdown("<h4 class='center'>Publications</h4>", unsafe_allow_html=True)
-    st.markdown("<p class='center'><a href='{ieee_journal_url}' target='_blank'>State of Charge and State of Health Estimation for Lithium Batteries Using Recurrent Neural Networks</a>.</p>", unsafe_allow_html=True)
-    st.markdown("<p class='center'><a href='{ieee_conferencel_url}' target='_blank'>State of Charge Estimation of LiFePO4 Batteries with Temperature Variations using Neural Networks</a>.</p>", unsafe_allow_html=True)
-    st.markdown("<p class='center'><a href='{elsevier_journal_url}' target='_blank'>Aging Prediction and State of Charge Estimation of a LiFePO4 battery using input time-delayed neural networks</a>.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p class='center'><a href='{ieee_journal_url}' target='_blank'>State of Charge and State of Health Estimation for Lithium Batteries Using Recurrent Neural Networks</a>.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p class='center'><a href='{ieee_conferencel_url}' target='_blank'>State of Charge Estimation of LiFePO4 Batteries with Temperature Variations using Neural Networks</a>.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p class='center'><a href='{elsevier_journal_url}' target='_blank'>Aging Prediction and State of Charge Estimation of a LiFePO4 battery using input time-delayed neural networks</a>.</p>", unsafe_allow_html=True)
     st.markdown("---", unsafe_allow_html=True)
 
     # Display the Education

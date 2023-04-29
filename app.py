@@ -23,9 +23,10 @@ if api_key:
         if tab_choice == "YouTube": render_youtube_page(api_key)
         elif tab_choice == "Wikipedia": render_wikipedia_page(api_key)
         elif tab_choice == "PDF": render_pdf_page(api_key)
-        elif tab_choice == "CSV": render_csv_page()
+        elif tab_choice == "CSV": 
+            render_csv_page(api_key)
         elif tab_choice == "Chat": render_chat_page(api_key)
-        elif tab_choice == "Bio": 
+        elif tab_choice == "Bio":
             render_profile_page()
         else: st.write("Bad File")
     except Exception as e:
