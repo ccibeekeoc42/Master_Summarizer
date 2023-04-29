@@ -1,5 +1,6 @@
 llama_index
 langchain
+pandas
 PyPDF2
 pdfplumber
 streamlit

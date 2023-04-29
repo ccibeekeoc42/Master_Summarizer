@@ -60,9 +60,8 @@ def render_profile_page():
     st.markdown("---", unsafe_allow_html=True)
 
     # Display the Education
-    thesis_url = "https://www.tntech.edu/engineering/pdf/grad/ms/2017/CIEkeocha_MS.pdf"
     st.markdown("<h4 class='center'>Education</h4>", unsafe_allow_html=True)
-    st.markdown("<p class='center'>Master's Degree in Computer Engineering {<a href='{thesis_url}' target='_blank'>Thesis</a>}.</p>", unsafe_allow_html=True)
+    st.markdown("<p class='center'>Master's Degree in Computer Engineering.</p>", unsafe_allow_html=True)
     st.markdown("<p class='center'>Bachelor of Science in Electrical Engineering.</p>", unsafe_allow_html=True)
     st.markdown("---", unsafe_allow_html=True)
 
