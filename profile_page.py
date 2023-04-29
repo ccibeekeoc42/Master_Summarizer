@@ -65,3 +65,12 @@ def render_profile_page():
     st.markdown("<p class='center'>Master's Degree in Computer Engineering {<a href='{thesis_url}' target='_blank'>Thesis</a>}.</p>", unsafe_allow_html=True)
     st.markdown("<p class='center'>Bachelor of Science in Electrical Engineering.</p>", unsafe_allow_html=True)
     st.markdown("---", unsafe_allow_html=True)
+
+    # Display the Education
+    st.markdown("<h4 class='center'>Hobbies</h4>", unsafe_allow_html=True)
+    st.markdown("<p class='center'>Leading, Learning, and Educating.</p>", unsafe_allow_html=True)
+    st.markdown("<p class='center'>Traveling, Exploring, and Discovering.</p>", unsafe_allow_html=True)
+    st.markdown("<p class='center'>Reading, Researching, and Coding.</p>", unsafe_allow_html=True)
+    st.markdown("<p class='center'>Food, Fitness, and Wellness.</p>", unsafe_allow_html=True)
+    st.markdown("---", unsafe_allow_html=True)
+    st.markdown("<h4 class='center'><i>Thank You.</i></h4>", unsafe_allow_html=True)
