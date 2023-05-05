@@ -1,17 +1,18 @@
+"""This module is responsible for handling everything related to csv files"""
 import streamlit as st
 import pandas as pd
 from langchain.agents import create_csv_agent
-from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 
 def render_csv_page(api_key):
+    """Renders the csv webpage"""
     st.subheader("CSV📊")
     # Upload the CSV file
     csv_file = st.file_uploader("Choose a CSV file", type=["csv"])
     if csv_file:
         data = pd.read_csv(csv_file)
         data.to_csv('temp.csv')
-    csv_prompt = st.text_area(f"What would you like to know: ")
+    csv_prompt = st.text_area("What would you like to know: ")
     if st.button("Submit"):
         if csv_file and csv_prompt:
             with st.spinner("generating..."):

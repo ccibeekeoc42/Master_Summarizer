@@ -20,12 +20,16 @@ tab_choice = st.sidebar.radio("Choose a Tab", tab_names)
 
 if api_key:
     try:
-        if tab_choice == "YouTube": render_youtube_page(api_key)
-        elif tab_choice == "Wikipedia": render_wikipedia_page(api_key)
-        elif tab_choice == "PDF": render_pdf_page(api_key)
-        elif tab_choice == "CSV": 
+        if tab_choice == "YouTube":
+            render_youtube_page(api_key)
+        elif tab_choice == "Wikipedia":
+            render_wikipedia_page(api_key)
+        elif tab_choice == "PDF": 
+            render_pdf_page(api_key)
+        elif tab_choice == "CSV":
             render_csv_page(api_key)
-        elif tab_choice == "Chat": render_chat_page(api_key)
+        elif tab_choice == "Chat":
+            render_chat_page(api_key)
         elif tab_choice == "Bio":
             render_profile_page()
         else: st.write("Bad File")
