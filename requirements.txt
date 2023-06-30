@@ -1,5 +1,5 @@
 llama_index==0.5.10
-langchain
+langchain==0.0.135
 pandas
 PyPDF2
 pdfplumber
