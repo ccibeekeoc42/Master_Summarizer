@@ -7,7 +7,6 @@ from chat_page import render_chat_page
 from profile_page import render_profile_page
 from csv_page import render_csv_page
 
-
 st.set_page_config(page_title="Master Summarizer",
                    layout="wide", initial_sidebar_state="expanded")
 
@@ -36,5 +35,5 @@ if api_key:
     except Exception as e:
         st.error(f"An error occurred. Please ensure valid SecreteKey and correct input fotmat.\n Here's the error: {e}")
 else: 
-    st.error("No Secret Key Found!! Contact the author to request one!")
+    st.error("No Secret Key Found!! Contact the author (Chris Ibe) to request one!")
     render_profile_page()
