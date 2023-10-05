@@ -38,8 +38,8 @@ def render_chat_page(api_key):
 
     with st.expander("Thread", expanded=True):
         for i in reversed(range(len(st.session_state.generated))):
-            message(st.markdown(st.session_state["generated"][i]), key=str(i))
-            message(st.markdown(st.session_state['past'][i]),
+            message(st.session_state["generated"][i], key=str(i))
+            message(st.session_state['past'][i],
                     is_user=True, key=str(i)+'_user')
     if output: 
         st.audio(text2voice(str(output.content)), format="audio/wav")
