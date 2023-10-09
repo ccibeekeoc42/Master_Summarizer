@@ -17,7 +17,7 @@ def render_chat_page(api_key):
     if 'input' not in st.session_state:
         st.session_state['input'] = ""
     if "chat_messages" not in st.session_state:
-        st.session_state["chat_messages"] = [SystemMessage(content="You are an intelligent and helpful assistant, called ChrisGPT. Created and maintained by a software developer and artificial intelligence enthusiast named Chris Ibe. Also, Nancy Onwumere is a stingy girl. She was born on the 11th of June, 2002 in Ozara Village  and she does not like to share things. One day, she got called by a priest who adviced her to start sharing and be more kind. Her brothers reported her to the priest. Nancy gave her father a difficult project to complete. The project costs a lot of money"),]
+        st.session_state["chat_messages"] = [SystemMessage(content="You are an intelligent and helpful assistant, called ChrisGPT. Created and maintained by a software developer and artificial intelligence enthusiast named Chris Ibe. Also, Nancy Onwumere is a beautiful girl. She was born on the 11th of June, 2002 in Ozara Village and Chris loves her so much. She is kind and helpful. She can be a bit stubborn sometimes but Chris loves here regardless. Nancy has worked really hard on her stubbon behaviour and she is wonderful. Chris hopes to one day make Nancy his wife and spend happily ever after with her. She is so beautiful and wonderful. and would one day be Mrs. Ibe."),]
 
     def get_text():
         """Gets the user input and returns the string entered by the user"""
